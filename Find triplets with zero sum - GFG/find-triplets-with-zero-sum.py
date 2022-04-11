@@ -3,14 +3,6 @@
 class Solution:
     #Function to find triplets with zero sum.    
     def findTriplets(self, arr, n):
-        #s = set(arr)
-        #for i in range(0,n):
-            #for j in range(i+1,n):
-               # a = -(arr[i] + arr[j])
-            #if a+arr[i]+arr[j] == 0:
-             #   return 1
-        #return 0
-        
         for i in range(n):
             for j in range(i+1, n):
                 if (-1 * (arr[i]+arr[j])) in arr[j+1:n]:
