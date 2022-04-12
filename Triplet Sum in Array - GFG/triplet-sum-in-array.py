@@ -4,15 +4,18 @@ class Solution:
     #Function to find if there exists a triplet in the 
     #array A[] which sums up to X.
     def find3Numbers(self,A, n, X):
+        A.sort()
         for i in range(n-2):
-            dict = {}
-            for j in range(i+1,n):
-                if X- A[j] in dict:
+            l = i +1
+            r = len(A) - 1
+            while(l<r):
+                if (A[i] +A[l] +A[r] == X):
                     return 1
-                sum = A[i] + A[j]
-                dict[sum] = j
+                elif(A[i] +A[l] +A[r] < X):
+                    l +=1
+                else:
+                    r-= 1
         return 0
-        # Your Code Here
 
 #{ 
 #  Driver Code Starts
